@@ -15,7 +15,7 @@
         android:paddingRight="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="5dp"
-        android:text="0"
+        android:text=""
         android:textAlignment="textEnd"
         android:textSize="18sp"
         android:textColor="@color/colorText"
@@ -74,7 +74,7 @@
         app:layout_constraintBottom_toTopOf="@id/number8"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onBackClick" />
 
     <Button
         android:id="@+id/modulo"
@@ -92,7 +92,7 @@
         app:layout_constraintBottom_toTopOf="@id/number9"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onOperatorClick" />
 
     <Button
         android:id="@+id/divide"
@@ -110,7 +110,7 @@
         app:layout_constraintBottom_toTopOf="@id/multiply"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onOperatorClick" />
 
     <Button
         android:id="@+id/number7"
@@ -128,7 +128,7 @@
         app:layout_constraintBottom_toTopOf="@id/number4"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/number8"
@@ -146,7 +146,7 @@
         app:layout_constraintBottom_toTopOf="@id/number5"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/number9"
@@ -164,14 +164,14 @@
         app:layout_constraintBottom_toTopOf="@id/number6"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
-    <ImageButton
+    <Button
         android:id="@+id/multiply"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/colorButtonOperator"
-        android:src="@drawable/ic_outline_multiply"
+        android:text="*"
         android:textColor="@color/colorText"
         android:textSize="36sp"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -182,7 +182,7 @@
         app:layout_constraintBottom_toTopOf="@id/minus"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onOperatorClick" />
 
     <Button
         android:id="@+id/number4"
@@ -200,7 +200,7 @@
         app:layout_constraintBottom_toTopOf="@id/number1"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/number5"
@@ -218,7 +218,7 @@
         app:layout_constraintBottom_toTopOf="@id/number2"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/number6"
@@ -236,7 +236,7 @@
         app:layout_constraintBottom_toTopOf="@id/number3"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/minus"
@@ -254,7 +254,7 @@
         app:layout_constraintBottom_toTopOf="@id/plus"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onOperatorClick" />
 
     <Button
         android:id="@+id/number1"
@@ -272,7 +272,7 @@
         app:layout_constraintBottom_toTopOf="@id/invert"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/number2"
@@ -290,7 +290,7 @@
         app:layout_constraintBottom_toTopOf="@id/number0"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/number3"
@@ -308,7 +308,7 @@
         app:layout_constraintBottom_toTopOf="@id/decimal"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/plus"
@@ -326,7 +326,7 @@
         app:layout_constraintBottom_toTopOf="@id/calculate"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onOperatorClick" />
 
     <Button
         android:id="@+id/invert"
@@ -344,7 +344,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onInvertClick" />
 
     <Button
         android:id="@+id/number0"
@@ -362,7 +362,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onNumberClick" />
 
     <Button
         android:id="@+id/decimal"
@@ -380,7 +380,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onDecimalClick" />
 
     <Button
         android:id="@+id/calculate"
@@ -398,5 +398,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside"
         app:layout_constraintVertical_weight="1"
-        android:onClick="onClearClick" />
+        android:onClick="onCalculateClick" />
 </androidx.constraintlayout.widget.ConstraintLayout>

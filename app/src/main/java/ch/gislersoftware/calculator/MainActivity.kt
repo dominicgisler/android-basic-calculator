@@ -5,11 +5,13 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.math.ceil
+import kotlin.math.floor
 
 class MainActivity : AppCompatActivity() {
-    var outcome : Double = 0.0
-    var input : String = ""
-    var operator : String = ""
+    var outcome: Double = 0.0
+    var input: String = ""
+    var operator: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             input = ""
         }
         operator = (view as Button).text.toString()
+        firstInput.text = "${getDoubleAsString(outcome)} $operator"
     }
 
     fun onCalculateClick(view: View) {
@@ -42,6 +45,30 @@ class MainActivity : AppCompatActivity() {
         renderResult()
     }
 
+    fun onDecimalClick(view: View) {
+        if (!input.contains(".")) {
+            input += "."
+        }
+        result.text = input
+    }
+
+    fun onInvertClick(view: View) {
+        if (input == "") {
+            return
+        }
+        if (input.startsWith("-")) {
+            input = input.removePrefix("-")
+        } else {
+            input = "-$input";
+        }
+        result.text = input
+    }
+
+    fun onBackClick(view: View) {
+        input = input.dropLast(1)
+        result.text = input
+    }
+
     private fun calculate(operator: String) {
         if (input == "" || operator == "") {
             return
@@ -51,12 +78,22 @@ class MainActivity : AppCompatActivity() {
             "-" -> outcome -= input.toDouble()
             "*" -> outcome *= input.toDouble()
             "/" -> outcome /= input.toDouble()
+            "%" -> outcome %= input.toDouble()
         }
-        input = ""
         renderResult()
     }
 
     private fun renderResult() {
-        result.text = outcome.toString()
+        firstInput.text = ""
+        result.text = getDoubleAsString(outcome)
+        input = ""
+    }
+
+    private fun getDoubleAsString(value: Double): String {
+        if (ceil(value) == floor(value)) {
+            return value.toInt().toString()
+        } else {
+            return value.toString()
+        }
     }
 }
